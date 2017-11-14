@@ -1,20 +1,21 @@
 import React, { Component } from 'react';
+import data from '../data.js'
 
-import CardQuestion from './CardQuestion';
-import CardAnswer from './CardAnswer';
 
 class Card extends Component {
+	render () {
 
-    render() {
-
-        return (
-
-            <div className="Card">
-            	<CardQuestion />
-            	<CardAnswer />
-            </div>
-        );
-    }
+		return (
+			<div className="Card">
+				<div className="questionAndAnswer">
+					<h4>{this.props.flipped ? this.props.card.answer : this.props.card.question}</h4>
+				</div>
+				<div className="Counter">
+					<p>{this.props.currentCard}/{this.props.length}</p>
+				</div>
+			</div>
+		)
+	}
 }
 
 export default Card;

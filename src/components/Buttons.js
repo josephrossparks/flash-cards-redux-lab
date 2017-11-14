@@ -1,4 +1,7 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+
+import { flipCard, nextCard, previousCard, shuffle } from '../actions'
 
 
 class Buttons extends Component {
@@ -7,13 +10,15 @@ class Buttons extends Component {
        
         return (
             <div className="ButtonContainer">
-            	<button>Previous</button>
-                <button>Shuffle</button>
-                <button>Flip</button>
-                <button>Next</button>
+            	<button onClick={this.props.previousCard}>Previous</button>
+                <button onClick={this.props.shuffle}>Shuffle</button>
+                <button onClick={this.props.flipCard}>Flip</button>
+                <button onClick={this.props.nextCard}>Next</button>
             </div>
         );
     }
 }
 
-export default Buttons;
+const mapActionsToProps = { flipCard, nextCard, previousCard, shuffle };
+
+export default connect(null, mapActionsToProps)(Buttons);

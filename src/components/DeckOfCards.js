@@ -1,24 +1,38 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 
 import Card from './Card.js';
 
+
 class DeckOfCards extends Component {
 
-    render() {
+   render() {
 
-    	//Create a card component for each card in the deck.
-    	/*const renderCardDeck = this.props.DeckOfCards.map((card, i) => {
-    
-            return <Card key={i} card={card} onClick={() => this.props.flipCard(card)} />
-        });*/
+        const selectedCardIndex = this.props.cards.map((card, index) => {
 
-        return (
+            if (this.props.selectedCardIndex === index) {
+                return <Card key={index}
+                            card={card}
+                            flipped={this.props.flipped}
+                            currentCard={index+1}
+                            length={this.props.cards.length} />
+            }
+        });
+
+        return(
             <div className="DeckOfCards">
-            	<h2>Flash Card Review!</h2>
-				<Card />
+                {selectedCardIndex}
             </div>
-        );
+        )
+   }
+}
+
+function mapStateToProps(state) {
+    return {
+        cards: state.cards,
+        selectedCardIndex: state.selectedCardIndex,
+        flipped: state.flipped
     }
 }
 
-export default DeckOfCards;
+export default connect(mapStateToProps)(DeckOfCards);

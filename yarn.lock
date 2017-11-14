@@ -3955,10 +3955,6 @@ lodash.uniq@^4.5.0:
   version "4.17.4"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.4.tgz#78203a4d1c328ae1d86dca6460e369b57f4055ae"
 
-logger@^0.0.1:
-  version "0.0.1"
-  resolved "https://registry.yarnpkg.com/logger/-/logger-0.0.1.tgz#cb08171f8a6f6f674b8499dadf50bed4befb72c4"
-
 loglevel@^1.4.1:
   version "1.5.1"
   resolved "https://registry.yarnpkg.com/loglevel/-/loglevel-1.5.1.tgz#189078c94ab9053ee215a0acdbf24244ea0f6502"
